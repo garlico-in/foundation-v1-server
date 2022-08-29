@@ -40,7 +40,7 @@ const PoolServer = function (logger, client) {
     // Build Main Server
     const app = express();
     const api = new PoolApi(_this.client, _this.poolConfigs, _this.portalConfig);
-    const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
+    const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 1000 });
     const cache = apicache.options({}).middleware;
 
     // Establish Middleware
